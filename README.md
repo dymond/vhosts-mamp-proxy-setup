@@ -29,15 +29,18 @@ You can get browser-sync to work by adding `proxy: "yoursite.url"` to your brows
 
 ### Gulp users
 Add this to your gulpfile:
-```var browserSyncOptions = {
+```
+var browserSyncOptions = {
 	proxy: "yoursite.url"
-};```
+};
+```
 
 __Be careful!__ I would recommend searching for `browserSyncOptions` in your gulpfile if you didn't hand build it. If it's already set, just add `proxy: "yoursite.url",` in with the other options.
 
 ### Grunt users
 You should reference [the docs](https://browsersync.io/docs/grunt). As long as your setup isn't really funky, it should be pretty straightforward to just add the proxy line to your task so that it looks something like this:
-```browserSync: {
+```
+browserSync: {
 	dev: {
 		bsFiles: {
 			src : 'assets/css/style.css'
@@ -46,4 +49,5 @@ You should reference [the docs](https://browsersync.io/docs/grunt). As long as y
 			proxy: "local.dev"
 		}
 	}
-}```
+}
+```
