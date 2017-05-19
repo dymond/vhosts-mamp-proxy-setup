@@ -21,7 +21,7 @@
 5. Edit hosts file and add this line:
 	* `127.0.0.1      localhost yoursite.url`
 	* If you are working on multiple sites, create an entry for each site url.
-	* ([Hostbuddy](https://clickontyler.com/hostbuddy/) allows quick, easy swapping of hosts files)
+		* ([Hostbuddy](https://clickontyler.com/hostbuddy/) allows quick, easy swapping of hosts files)
 6. Restart the MAMP servers
 
 ## Additional step for browser-sync users
