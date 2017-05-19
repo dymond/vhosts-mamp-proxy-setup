@@ -25,7 +25,7 @@
 6. Restart the MAMP servers
 
 ## Additional step for browser-sync users
-You can get browser-sync to work by add `proxy: "yoursite.url"` to your browser-sync options. Depending on your task runner environment, this can be different. These examples are for gulp and grunt. I don't use brunch, but it should be fairly simple to figure out.
+You can get browser-sync to work by adding `proxy: "yoursite.url"` to your browser-sync options. Depending on your task runner environment, this can be different. These examples are for gulp and grunt. I don't use brunch, but it should be fairly simple to figure out.
 
 ### Gulp users
 Add this to your gulpfile:
