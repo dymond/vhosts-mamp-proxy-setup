@@ -4,12 +4,24 @@
 2. Open `/Applications/MAMP/conf/apache/httpd.conf` and search for `-vhosts.conf`. If you have the default `httpd.conf`, only one match will show up on line 585 and you'll need to uncomment that line by deleting the `#` at the start of it.
 	* It will go from this: `# Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
 	* to this: `Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf`
-3. Edit hosts file and add this lines:
+3. Copy the `httpd-vhosts.conf` file from this repo into `/Applications/MAMP/conf/apache/extra`
+4. Edit `httpd-vhosts.conf` to reflect the correct location of your site directory on your local drive and the new site URL you want
+	* Lines 34, 35 and 36 should each be edited
+	* If you want to work on multiple sites, duplicate the entire section below and change those three parameters for each site.
+```
+<VirtualHost *:80>
+    DocumentRoot "/Users/*NAME*/dev/site"     <-- Put your local directory here
+    ServerName site.url                       <-- Put your desired url here
+    <Directory "/Users/*NAME*/dev/site">      <-- Put your local directory here
+        Options Indexes FollowSymLinks
+        AllowOverride All
+    </Directory>
+</VirtualHost>
+```
+5. Edit hosts file and add this line:
 	* `127.0.0.1      localhost yoursite.url`
+	* If you are working on multiple sites, create an entry for each site url.
 	* ([Hostbuddy](https://clickontyler.com/hostbuddy/) allows quick, easy swapping of hosts files)
-4. Copy the `httpd-vhosts.conf` file from this repo into `/Applications/MAMP/conf/apache/extra`
-5. Edit `httpd-vhosts.conf` to reflect the correct location of your site directory on your local drive and the new site URL you want
-	* (Lines 34, 35 and 36 should each be edited)
 6. Restart the MAMP servers
 
 ## Additional step for browser-sync users
